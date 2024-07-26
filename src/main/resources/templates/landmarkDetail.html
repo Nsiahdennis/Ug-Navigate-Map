@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Landmark Detail</title>
+</head>
+<body>
+<h1>Landmark Detail</h1>
+<p>ID: <span th:text="${landmark.id}"></span></p>
+<p>Name: <span th:text="${landmark.name}"></span></p>
+<p>Location: <span th:text="${landmark.location.name}"></span></p>
+<a href="/landmarks">Back to Landmarks</a>
+</body>
+</html>

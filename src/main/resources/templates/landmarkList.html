@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Landmarks</title>
+</head>
+<body>
+<h1>Landmarks</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="landmark : ${landmarks}">
+        <td th:text="${landmark.id}"></td>
+        <td th:text="${landmark.name}"></td>
+        <td th:text="${landmark.location.name}"></td>
+        <td>
+            <a th:href="@{/landmarks/{id}(id=${landmark.id})}">View</a>
+            <a th:href="@{/landmarks/delete/{id}(id=${landmark.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/landmarks/new">Add New Landmark</a>
+</body>
+</html>

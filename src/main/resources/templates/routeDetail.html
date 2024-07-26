@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Route Detail</title>
+</head>
+<body>
+<h1>Route Detail</h1>
+<p>ID: <span th:text="${route.id}"></span></p>
+<p>Source: <span th:text="${route.source.name}"></span></p>
+<p>Destination: <span th:text="${route.destination.name}"></span></p>
+<p>Distance: <span th:text="${route.distance}"></span></p>
+<p>Arrival Time: <span th:text="${route.arrivalTime}"></span></p>
+<a href="/routes">Back to Routes</a>
+</body>
+</html>

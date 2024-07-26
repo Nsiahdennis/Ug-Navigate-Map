@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add/Edit Location</title>
+</head>
+<body>
+<h1>Add/Edit Location</h1>
+<form th:action="@{/locations}" th:object="${location}" method="post">
+    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p>Latitude: <input type="text" th:field="*{latitude}" /></p>
+    <p>Longitude: <input type="text" th:field="*{longitude}" /></p>
+    <p><input type="submit" value="Save" /></p>
+</form>
+<a href="/locations">Back to Locations</a>
+</body>
+</html>

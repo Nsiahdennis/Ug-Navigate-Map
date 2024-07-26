@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add/Edit Landmark</title>
+</head>
+<body>
+<h1>Add/Edit Landmark</h1>
+<form th:action="@{/landmarks}" th:object="${landmark}" method="post">
+    <p>Name: <input type="text" th:field="*{name}" /></p>
+    <p>Location: <input type="text" th:field="*{location.name}" /></p>
+    <p><input type="submit" value="Save" /></p>
+</form>
+<a href="/landmarks">Back to Landmarks</a>
+</body>
+</html>

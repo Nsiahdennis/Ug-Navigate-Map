@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add/Edit Route</title>
+</head>
+<body>
+<h1>Add/Edit Route</h1>
+<form th:action="@{/routes}" th:object="${route}" method="post">
+    <p>Source: <input type="text" th:field="*{source.name}" /></p>
+    <p>Destination: <input type="text" th:field="*{destination.name}" /></p>
+    <p>Distance: <input type="text" th:field="*{distance}" /></p>
+    <p>Arrival Time: <input type="text" th:field="*{arrivalTime}" /></p>
+    <p><input type="submit" value="Save" /></p>
+</form>
+<a href="/routes">Back to Routes</a>
+</body>
+</html>
