@@ -1,25 +1,25 @@
-package src.NavigationAlgorithm;
+package com.teamproject.Ug.Navigation.NavigationAlgorithm;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class CustomPriorityQueue {
-    private PriorityQueue<Node> priorityQueue;
+    private PriorityQueue<src.NavigationAlgorithm.Node> priorityQueue;
 
 
     public CustomPriorityQueue() {
         this.priorityQueue = new PriorityQueue<>(Comparator.comparingDouble(node -> node.totalDistance));
-        priorityQueue.add(new Node(Integer.MAX_VALUE, null, Double.MAX_VALUE, Double.MAX_VALUE));
+        priorityQueue.add(new src.NavigationAlgorithm.Node(Integer.MAX_VALUE, null, Double.MAX_VALUE, Double.MAX_VALUE));
     }
 
     // Add a new Node to the priority queue
-    public void add(Node newNode) {
+    public void add(src.NavigationAlgorithm.Node newNode) {
 
         priorityQueue.add(newNode);
     }
 
     // Removes the first element in the queue
-    public Node remove() {
+    public src.NavigationAlgorithm.Node remove() {
 
         return priorityQueue.poll();
     }

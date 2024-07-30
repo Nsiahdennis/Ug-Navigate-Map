@@ -10,9 +10,9 @@ public class AStar {
     static ArrayList<List<Integer>> routes = new ArrayList<>();
     static ArrayList<Double> distances = new ArrayList<>();
 
-    static ArrayList<String[]> csvContents = ReadCSV.readCSV("src/NavigationAlgorithm/UG-locations.csv");
+    static ArrayList<String[]> csvContents = src.NavigationAlgorithm.ReadCSV.readCSV("src/NavigationAlgorithm/UG-locations.csv");
     static double dist = 0;
-    static void getSolution(Node node, int end){
+    static void getSolution(src.NavigationAlgorithm.Node node, int end){
         ArrayList<Integer> path = new ArrayList<>();
         while(node.parent != null){
             path.add(node.id);
@@ -27,11 +27,11 @@ public class AStar {
     }
     public static int Astar(int start, int end) {
         Set<Integer> visited = new HashSet<>();
-        CustomPriorityQueue queue = new CustomPriorityQueue();
-        queue.add(new Node(start, null, 0, 0));
+        src.NavigationAlgorithm.CustomPriorityQueue queue = new src.NavigationAlgorithm.CustomPriorityQueue();
+        queue.add(new src.NavigationAlgorithm.Node(start, null, 0, 0));
 
         while (!queue.isEmpty()) {
-            Node node = queue.remove();
+            src.NavigationAlgorithm.Node node = queue.remove();
             if (node == null) {
                 break;
             }
@@ -55,16 +55,16 @@ public class AStar {
 
                 visited.add(currentNode);
 
-                for (int neighbour: Util.getNeighbours(currentNode)) {
-                    double newDistance = currentCost + Util.getDistance(currentNode, neighbour);
-                    double heuristic = Util.getDistance(neighbour, end);
-                    queue.add(new Node(neighbour, node, newDistance, heuristic));
+                for (int neighbour: src.NavigationAlgorithm.Util.getNeighbours(currentNode)) {
+                    double newDistance = currentCost + src.NavigationAlgorithm.Util.getDistance(currentNode, neighbour);
+                    double heuristic = src.NavigationAlgorithm.Util.getDistance(neighbour, end);
+                    queue.add(new src.NavigationAlgorithm.Node(neighbour, node, newDistance, heuristic));
                 }
             }
         }
         System.out.println("Shortest path: " + routes.get(0));
         for (int id: routes.get(0)) {
-            System.out.println(ReadCSV.getNameById(csvContents,id));
+            System.out.println(src.NavigationAlgorithm.ReadCSV.getNameById(csvContents,id));
         }
         System.out.println("Distance: " + distances.get(0));
         System.out.println(routes);
