@@ -1,4 +1,4 @@
-package src.NavigationAlgorithm;
+package com.teamproject.Ug.Navigate.Map.NavigationAlgorithm;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -121,12 +121,10 @@ public class ReadCSV {
     }
 
     public static int getID(ArrayList<String[]> csvContents, String name) {
-
         return getIdByName(csvContents, name);
     }
 
     public static int getCSVLength(ArrayList<String[]> csvContents){
-
         return csvContents.size();
     }
 }

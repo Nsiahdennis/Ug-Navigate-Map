@@ -1,4 +1,4 @@
-package src.NavigationAlgorithm;
+package com.teamproject.Ug.Navigate.Map.NavigationAlgorithm;
 
 public class Node {
   public int id;

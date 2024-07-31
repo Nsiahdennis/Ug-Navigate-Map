@@ -1,11 +1,11 @@
-package src.NavigationAlgorithm;
+package com.teamproject.Ug.Navigate.Map.NavigationAlgorithm;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Util {
-    static ArrayList<String[]> csvContents = ReadCSV.readCSV("src/NavigationAlgorithm/UG-distances.csv");
+    static ArrayList<String[]> csvContents = ReadCSV.readCSV("src/main/java/com/teamproject/Ug/Navigate/Map/NavigationAlgorithm/UG-distances.csv");
 
 
     private static final double EARTH_RADIUS_KM = 6371.01;

@@ -7,8 +7,8 @@
 </head>
 <body>
 <h1>Optimal Routes</h1>
-<div th:each="route : ${routes}">
-    <p th:text="${route}"></p>
+<!--<div th:each="route : ${routes}">-->
+    <p th:text="${route.getSource()}"></p>
 </div>
 <a href="/">Back</a>
 </body>
